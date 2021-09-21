@@ -7,16 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3465D3126FA86A100BDC29B /* RPCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3465D3026FA86A100BDC29B /* RPCView.swift */; };
+		D374B91026FA7FCA00F3DEF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B90F26FA7FCA00F3DEF1 /* Constants.swift */; };
+		D374B91326FA801800F3DEF1 /* BGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B91226FA801800F3DEF1 /* BGView.swift */; };
+		D374B91A26FA807B00F3DEF1 /* AICard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B91926FA807B00F3DEF1 /* AICard.swift */; };
+		D374B91D26FA809300F3DEF1 /* ButtonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B91C26FA809300F3DEF1 /* ButtonImage.swift */; };
+		D374B92026FA80C300F3DEF1 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B91F26FA80C300F3DEF1 /* ScoreView.swift */; };
+		D374B92326FA819500F3DEF1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B92226FA819500F3DEF1 /* ViewModel.swift */; };
 		D3D9C6922658A36300D268D1 /* Rock_Paper_ScissorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D9C6912658A36300D268D1 /* Rock_Paper_ScissorsApp.swift */; };
-		D3D9C6942658A36300D268D1 /* RPCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D9C6932658A36300D268D1 /* RPCView.swift */; };
 		D3D9C6962658A36300D268D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D9C6952658A36300D268D1 /* Assets.xcassets */; };
 		D3D9C6992658A36300D268D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D9C6982658A36300D268D1 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D3465D3026FA86A100BDC29B /* RPCView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPCView.swift; sourceTree = "<group>"; };
+		D374B90F26FA7FCA00F3DEF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D374B91226FA801800F3DEF1 /* BGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGView.swift; sourceTree = "<group>"; };
+		D374B91926FA807B00F3DEF1 /* AICard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICard.swift; sourceTree = "<group>"; };
+		D374B91C26FA809300F3DEF1 /* ButtonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonImage.swift; sourceTree = "<group>"; };
+		D374B91F26FA80C300F3DEF1 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		D374B92226FA819500F3DEF1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D3D9C68E2658A36300D268D1 /* Rock Paper Scissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rock Paper Scissors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D9C6912658A36300D268D1 /* Rock_Paper_ScissorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rock_Paper_ScissorsApp.swift; sourceTree = "<group>"; };
-		D3D9C6932658A36300D268D1 /* RPCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPCView.swift; sourceTree = "<group>"; };
 		D3D9C6952658A36300D268D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3D9C6982658A36300D268D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3D9C69A2658A36300D268D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +45,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3465D2A26FA83A400BDC29B /* VM-Constants-Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D374B90F26FA7FCA00F3DEF1 /* Constants.swift */,
+				D374B92226FA819500F3DEF1 /* ViewModel.swift */,
+			);
+			path = "VM-Constants-Extensions";
+			sourceTree = "<group>";
+		};
+		D374B91526FA802600F3DEF1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D3465D3026FA86A100BDC29B /* RPCView.swift */,
+				D374B91726FA803800F3DEF1 /* Helper Views */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D374B91726FA803800F3DEF1 /* Helper Views */ = {
+			isa = PBXGroup;
+			children = (
+				D374B91226FA801800F3DEF1 /* BGView.swift */,
+				D374B91926FA807B00F3DEF1 /* AICard.swift */,
+				D374B91C26FA809300F3DEF1 /* ButtonImage.swift */,
+				D374B91F26FA80C300F3DEF1 /* ScoreView.swift */,
+			);
+			path = "Helper Views";
+			sourceTree = "<group>";
+		};
 		D3D9C6852658A36300D268D1 = {
 			isa = PBXGroup;
 			children = (
@@ -53,7 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				D3D9C6912658A36300D268D1 /* Rock_Paper_ScissorsApp.swift */,
-				D3D9C6932658A36300D268D1 /* RPCView.swift */,
+				D3465D2A26FA83A400BDC29B /* VM-Constants-Extensions */,
+				D374B91526FA802600F3DEF1 /* Views */,
 				D3D9C6952658A36300D268D1 /* Assets.xcassets */,
 				D3D9C69A2658A36300D268D1 /* Info.plist */,
 				D3D9C6972658A36300D268D1 /* Preview Content */,
@@ -138,8 +180,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3D9C6942658A36300D268D1 /* RPCView.swift in Sources */,
+				D3465D3126FA86A100BDC29B /* RPCView.swift in Sources */,
+				D374B91D26FA809300F3DEF1 /* ButtonImage.swift in Sources */,
 				D3D9C6922658A36300D268D1 /* Rock_Paper_ScissorsApp.swift in Sources */,
+				D374B91026FA7FCA00F3DEF1 /* Constants.swift in Sources */,
+				D374B92026FA80C300F3DEF1 /* ScoreView.swift in Sources */,
+				D374B91326FA801800F3DEF1 /* BGView.swift in Sources */,
+				D374B92326FA819500F3DEF1 /* ViewModel.swift in Sources */,
+				D374B91A26FA807B00F3DEF1 /* AICard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
