@@ -14,14 +14,13 @@ struct ScoreView: View {
 	var body: some View {
 		VStack {
 			HStack {
-				Text("Player") + Text("-").bold() + Text("The Ai")
+				Text("Player") + Text(" - ").bold() + Text("The Ai")
 			}
-			Text("\(playerScore) - \(aiScore)")
-				.bold()
-				.font(.system(size: 50))
+			Text("\(playerScore) - \(aiScore)").bold()
 		}
-		.font(.system(size: 35))
+		.font(.largeTitle)
 		.foregroundColor(.white)
+			
 	}
 }
 

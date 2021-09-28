@@ -14,19 +14,18 @@ struct ButtonImage: View {
 			ZStack {
 				Circle()
 					.foregroundColor(.blue)
-					.frame(width: size.width/4,
-						   height: size.width/4,
+					.frame(width: size.width/4.5,
+						   height: size.width/4.5,
 						   alignment: .center)
 				Text(const.choices[index])
-					.font(.system(size: 85))
+					.font(.system(size: size.width/7.5))
 			}
 			Text(const.wordChoice[index])
-				.font(.system(size: 25))
+				.font(.system(size: size.width/20))
 				.foregroundColor(.white)
 				.font(.callout)
 				.fontWeight(.semibold)
 		}
-		.padding(10)
 	}
 }
 

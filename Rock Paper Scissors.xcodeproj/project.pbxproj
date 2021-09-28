@@ -17,6 +17,7 @@
 		D3D9C6922658A36300D268D1 /* Rock_Paper_ScissorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D9C6912658A36300D268D1 /* Rock_Paper_ScissorsApp.swift */; };
 		D3D9C6962658A36300D268D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D9C6952658A36300D268D1 /* Assets.xcassets */; };
 		D3D9C6992658A36300D268D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D9C6982658A36300D268D1 /* Preview Assets.xcassets */; };
+		D3DADC7027031263005FD898 /* WinTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DADC6F27031263005FD898 /* WinTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D3D9C6952658A36300D268D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3D9C6982658A36300D268D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3D9C69A2658A36300D268D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3DADC6F27031263005FD898 /* WinTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				D374B91226FA801800F3DEF1 /* BGView.swift */,
 				D374B91926FA807B00F3DEF1 /* AICard.swift */,
+				D3DADC6F27031263005FD898 /* WinTextView.swift */,
 				D374B91C26FA809300F3DEF1 /* ButtonImage.swift */,
 				D374B91F26FA80C300F3DEF1 /* ScoreView.swift */,
 			);
@@ -184,6 +187,7 @@
 				D374B91D26FA809300F3DEF1 /* ButtonImage.swift in Sources */,
 				D3D9C6922658A36300D268D1 /* Rock_Paper_ScissorsApp.swift in Sources */,
 				D374B91026FA7FCA00F3DEF1 /* Constants.swift in Sources */,
+				D3DADC7027031263005FD898 /* WinTextView.swift in Sources */,
 				D374B92026FA80C300F3DEF1 /* ScoreView.swift in Sources */,
 				D374B91326FA801800F3DEF1 /* BGView.swift in Sources */,
 				D374B92326FA819500F3DEF1 /* ViewModel.swift in Sources */,

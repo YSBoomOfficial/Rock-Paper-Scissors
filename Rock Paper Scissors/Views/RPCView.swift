@@ -17,13 +17,21 @@ struct RPCView: View {
 			
 			// Foreground
 			VStack {
+				
+				Spacer()
+				
+				VStack(spacing: 10) {
 				// Ai
-				AICard(isShowing: $vm.isShowing, shouldWin: $vm.shouldWin, ai: vm.ai)
+					AICard(isShowing: $vm.isShowing, shouldWin: $vm.shouldWin, ai: vm.ai)
+						// Win/Lose text
+					
+					WinTextView(isShowing: $vm.isShowing, shouldWin: $vm.shouldWin)
+				}
 				
 				Spacer()
 				
 				// Player
-				HStack {
+				HStack(spacing: 25) {
 					ForEach(0..<3) { index in
 						Button() {
 							vm.player = index
@@ -32,7 +40,7 @@ struct RPCView: View {
 							ButtonImage(index: index)
 						}
 					}
-				}.padding()
+				}
 				
 				Spacer()
 				

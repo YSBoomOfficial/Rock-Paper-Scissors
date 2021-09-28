@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-enum size {
+public enum size {
 	static let width = UIScreen.main.bounds.width
+	static let height = UIScreen.main.bounds.height
 }
 
-enum const {
+public enum const {
 	static let wordChoice = ["Rock", "Paper", "Scissors"]
 	static let choices = ["👊", "🖐", "✌️"]
 }

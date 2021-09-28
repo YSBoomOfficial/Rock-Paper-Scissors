@@ -25,7 +25,7 @@ struct AICard: View {
 					}
 					
 					Text(isShowing ? const.choices[ai] : "")
-						.font(.system(size: 180))
+						.font(.system(size: size.width/2))
 				}
 				.frame(width: size.width/1.5,
 					   height: size.width/1.5,
@@ -33,22 +33,8 @@ struct AICard: View {
 				
 				Text(self.isShowing ? const.wordChoice[ai] : "???")
 					.foregroundColor(.white)
-					.font(.system(size: 35))
-					.fontWeight(.bold)
-			}
-			.padding()
-			.padding(.top, 20)
-			
-			if isShowing {
-				Text(shouldWin ? "You won" : "You Lost")
-					.foregroundColor(shouldWin ? .green : .red)
-					.font(.system(size: 45))
-					.fontWeight(.bold)
-			} else {
-				Text("_")
-					.foregroundColor(.clear)
-					.font(.system(size: 45))
-					.fontWeight(.bold)
+					.font(.system(size: size.width/12))
+					.bold()
 			}
 		}
 	}
