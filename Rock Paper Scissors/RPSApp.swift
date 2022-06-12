@@ -1,5 +1,5 @@
 //
-//  Rock_Paper_ScissorsApp.swift
+//  RPSApp.swift
 //  Rock Paper Scissors
 //
 //  Created by Yash Shah on 22/05/2021.
@@ -8,10 +8,14 @@
 import SwiftUI
 
 @main
-struct Rock_Paper_ScissorsApp: App {
+struct RPSApp: App {
     var body: some Scene {
         WindowGroup {
-			RPCView()
+			ContentView()
+				.onAppear {
+					// MARK: Uncomment before prod
+					// AppReviewRequest.requestReviewIfNeeded()
+				}
         }
     }
 }

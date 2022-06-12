@@ -13,19 +13,20 @@ struct ScoreView: View {
 	
 	var body: some View {
 		VStack {
-			HStack {
-				Text("Player") + Text(" - ").bold() + Text("The Ai")
-			}
+			Text("Player - The Ai")
 			Text("\(playerScore) - \(aiScore)").bold()
 		}
-		.font(.largeTitle)
+		.font(.system(size: ScreenSize.minLength/12))
 		.foregroundColor(.white)
-			
+		.padding()
 	}
 }
 
 struct ScoreView_Previews: PreviewProvider {
     static var previews: some View {
-		ScoreView(playerScore: 0, aiScore: 0)
+		ZStack {
+			BGView()
+			ScoreView(playerScore: 0, aiScore: 0)
+		}
     }
 }

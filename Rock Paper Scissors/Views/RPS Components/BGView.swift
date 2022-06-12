@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct BGView: View {
+	let bgColor: Color = Color(red: 32/255, green: 32/255, blue: 32/255)
+	let fgColor: Color = Color(red: 64/255, green: 64/255, blue: 64/255)
+
 	var body: some View {
 		ZStack {
 			Rectangle()
-				.foregroundColor(Color(red: 32/255, green: 32/255, blue: 32/255))
-				.ignoresSafeArea()
+				.foregroundColor(bgColor)
+				.edgesIgnoringSafeArea(.all)
 			Rectangle()
-				.foregroundColor(Color(red: 64/255, green: 64/255, blue: 64/255))
+				.scaleEffect(x: 1, y: ScreenSize.maxLength, anchor: .center)
+				.foregroundColor(fgColor)
 				.rotationEffect(Angle(degrees: 45))
-				.ignoresSafeArea()
+				.edgesIgnoringSafeArea(.all)
 		}
 	}
 }
