@@ -12,7 +12,7 @@ struct SettingsView: View {
 		NavigationView {
 			List {
 				Section {
-					Label("Version \(String.basicBuildInfo())", systemImage: "app.badge")
+					Label("Version \(Constants.appVersion)", systemImage: "app.badge")
 				} header: {
 					Text("About")
 				} footer: {

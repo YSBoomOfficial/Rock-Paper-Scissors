@@ -10,7 +10,7 @@ import SwiftUI
 struct AICard: View {
 	@Binding var isShowing: Bool
 	@Binding var playerShouldWin: Bool
-	let model: RPSModel
+	let model: GameModel
 	let ai: Int
 	
 	var body: some View {

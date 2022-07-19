@@ -1,5 +1,5 @@
 //
-//  RPSView.swift
+//  GameView.swift
 //  Rock Paper Scissors
 //
 //  Created by Yash on 22/05/2021.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct RPSView: View {
-	@EnvironmentObject var vm: ViewModel
-	let model = RPSModel()
+struct GameView: View {
+	@EnvironmentObject var vm: GameViewModel
+	let model = GameModel()
 	
 	var body: some View {
 		ZStack {
@@ -18,7 +18,7 @@ struct RPSView: View {
 
 			// Foreground
 			VStack {
-				CustomTopBar()
+				CustomTopBarView()
 					.padding(.horizontal)
 
 				Spacer(minLength: 0)
@@ -64,8 +64,8 @@ struct RPSView: View {
 
 struct RPSView_Previews: PreviewProvider {
 	static var previews: some View {
-		RPSView()
-			.environmentObject(ViewModel())
+		GameView()
+			.environmentObject(GameViewModel())
 			.preferredColorScheme(.dark)
 	}
 }

@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  GameViewModel.swift
 //  Rock Paper Scissors
 //
 //  Created by Yash Shah on 21/09/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class ViewModel: ObservableObject {
+class GameViewModel: ObservableObject {
 	// Ai
 	@Published var ai = 0
 	@Published var aiScore = 0

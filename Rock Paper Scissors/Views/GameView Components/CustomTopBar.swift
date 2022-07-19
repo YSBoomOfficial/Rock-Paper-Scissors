@@ -1,5 +1,5 @@
 //
-//  CustomNavBar.swift
+//  CustomTopBarView.swift
 //  Rock Paper Scissors
 //
 //  Created by Yash Shah on 12/06/2022.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CustomTopBar: View {
-	@EnvironmentObject var vm: ViewModel
+struct CustomTopBarView: View {
+	@EnvironmentObject var vm: GameViewModel
 
     var body: some View {
 		HStack {
@@ -38,9 +38,9 @@ struct CustomTopBar_Previews: PreviewProvider {
 		ZStack {
 			BGView()
 			VStack {
-				CustomTopBar()
+				CustomTopBarView()
 					.padding(.horizontal)
-					.environmentObject(ViewModel())
+					.environmentObject(GameViewModel())
 				Spacer()
 			}
 		}.preferredColorScheme(.dark)

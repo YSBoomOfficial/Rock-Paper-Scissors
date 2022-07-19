@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-	@StateObject var vm = ViewModel()
+	@EnvironmentObject var vm: GameViewModel
 
     var body: some View {
 		NavigationView {
-			RPSView()
+			GameView()
 				.navigationBarHidden(true)
 				.sheet(isPresented: $vm.isShowingSettings) {
 					SettingsView()
 				}
-		}.environmentObject(vm)
+		}
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-			.environmentObject(ViewModel())
+		ContentView()
+			.environmentObject(GameViewModel())
 			.preferredColorScheme(.dark)
     }
 }

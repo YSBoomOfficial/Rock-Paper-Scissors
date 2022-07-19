@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ButtonImage: View {
 	let index: Int
-	let model: RPSModel
+	let model: GameModel
 
 	var body: some View {
 		VStack {
