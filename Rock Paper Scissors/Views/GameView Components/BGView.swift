@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BGView: View {
+	let proxy: GeometryProxy
 	let bgColor: Color = Color(red: 32/255, green: 32/255, blue: 32/255)
 	let fgColor: Color = Color(red: 64/255, green: 64/255, blue: 64/255)
 
@@ -17,7 +18,7 @@ struct BGView: View {
 				.foregroundColor(bgColor)
 				.edgesIgnoringSafeArea(.all)
 			Rectangle()
-				.scaleEffect(x: 1, y: ScreenSize.maxLength, anchor: .center)
+				.scaleEffect(x: 1, y: proxy.size.height, anchor: .center)
 				.foregroundColor(fgColor)
 				.rotationEffect(Angle(degrees: 45))
 				.edgesIgnoringSafeArea(.all)
@@ -27,6 +28,8 @@ struct BGView: View {
 
 struct BGView_Previews: PreviewProvider {
     static var previews: some View {
-        BGView()
+		GeometryReader { proxy in
+			BGView(proxy: proxy)
+		}
     }
 }

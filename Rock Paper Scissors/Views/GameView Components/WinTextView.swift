@@ -8,22 +8,25 @@
 import SwiftUI
 
 struct WinTextView: View {
+	let proxy: GeometryProxy
 	@Binding var isShowing: Bool
 	@Binding var shouldWin: Bool
 	
     var body: some View {
-		Text(!isShowing ? "_" : shouldWin ? "You won" : "You Lost")
-			.font(.system(size: ScreenSize.minLength/10))
+		Text(!isShowing ? "." : shouldWin ? "You won" : "You Lost")
+			.font(.largeTitle.bold())
 			.foregroundColor(!isShowing ? .clear : shouldWin ? .green : .red)
-			.bold()
+			.frame(width: proxy.size.width/2)
     }
 }
 
 struct WinTextView_Previews: PreviewProvider {
     static var previews: some View {
-		ZStack {
-			BGView()
-			WinTextView(isShowing: .constant(true), shouldWin: .constant(true))
+		GeometryReader { proxy in
+			ZStack {
+				BGView(proxy: proxy)
+				WinTextView(proxy: proxy, isShowing: .constant(true), shouldWin: .constant(true))
+			}
 		}
     }
 }

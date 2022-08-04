@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ScoreView: View {
+	let proxy: GeometryProxy
 	let playerScore: Int
 	let aiScore: Int
 	
@@ -16,17 +17,19 @@ struct ScoreView: View {
 			Text("Player - The Ai")
 			Text("\(playerScore) - \(aiScore)").bold()
 		}
-		.font(.system(size: ScreenSize.minLength/12))
+		.font(.largeTitle)
 		.foregroundColor(.white)
-		.padding()
 	}
 }
 
 struct ScoreView_Previews: PreviewProvider {
     static var previews: some View {
-		ZStack {
-			BGView()
-			ScoreView(playerScore: 0, aiScore: 0)
+		GeometryReader { proxy in
+			ZStack {
+				BGView(proxy: proxy)
+				ScoreView(proxy: proxy, playerScore: 0, aiScore: 0)
+			}
+
 		}
     }
 }

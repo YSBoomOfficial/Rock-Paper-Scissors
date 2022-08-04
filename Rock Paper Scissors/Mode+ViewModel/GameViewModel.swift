@@ -27,8 +27,8 @@ class GameViewModel: ObservableObject {
 	// Check Win / Los
 	func check(player: Int) {
 		shouldWin = Bool.random()
-		
-		isShowing = true
+
+		withAnimation { self.isShowing = true }
 		
 		if shouldWin == true {
 			switch player {
@@ -49,7 +49,7 @@ class GameViewModel: ObservableObject {
 			
 		// reset display after delay
 		DispatchQueue.main.asyncAfter(deadline: .now()+1.25) {
-			self.isShowing = false
+			withAnimation { self.isShowing = false }
 		}
 	}
 

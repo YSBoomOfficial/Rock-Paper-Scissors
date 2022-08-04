@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D30DE8CA27A645C50066DFB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D30DE8C927A645C50066DFB6 /* LaunchScreen.storyboard */; };
 		D3465D3126FA86A100BDC29B /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3465D3026FA86A100BDC29B /* GameView.swift */; };
-		D374B91026FA7FCA00F3DEF1 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B90F26FA7FCA00F3DEF1 /* ScreenSize.swift */; };
 		D374B91326FA801800F3DEF1 /* BGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B91226FA801800F3DEF1 /* BGView.swift */; };
 		D374B91A26FA807B00F3DEF1 /* AICard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B91926FA807B00F3DEF1 /* AICard.swift */; };
 		D374B91D26FA809300F3DEF1 /* ButtonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B91C26FA809300F3DEF1 /* ButtonImage.swift */; };
@@ -31,7 +30,6 @@
 /* Begin PBXFileReference section */
 		D30DE8C927A645C50066DFB6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3465D3026FA86A100BDC29B /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		D374B90F26FA7FCA00F3DEF1 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		D374B91226FA801800F3DEF1 /* BGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGView.swift; sourceTree = "<group>"; };
 		D374B91926FA807B00F3DEF1 /* AICard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICard.swift; sourceTree = "<group>"; };
 		D374B91C26FA809300F3DEF1 /* ButtonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonImage.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 			children = (
 				D3FE962F2855773C00AC1738 /* Constants.swift */,
 				D3FE962D285575AB00AC1738 /* AppReviewRequest.swift */,
-				D374B90F26FA7FCA00F3DEF1 /* ScreenSize.swift */,
 				D3FE962B285568BD00AC1738 /* LightBlueButton+ButtonStyle.swift */,
 			);
 			path = Utils;
@@ -224,7 +221,6 @@
 				D374B91D26FA809300F3DEF1 /* ButtonImage.swift in Sources */,
 				D3FE962E285575AB00AC1738 /* AppReviewRequest.swift in Sources */,
 				D3D9C6922658A36300D268D1 /* RPSApp.swift in Sources */,
-				D374B91026FA7FCA00F3DEF1 /* ScreenSize.swift in Sources */,
 				D3FE9632285577DA00AC1738 /* SettingsView.swift in Sources */,
 				D3DADC7027031263005FD898 /* WinTextView.swift in Sources */,
 				D374B92026FA80C300F3DEF1 /* ScoreView.swift in Sources */,

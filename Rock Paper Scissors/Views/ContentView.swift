@@ -17,7 +17,7 @@ struct ContentView: View {
 				.sheet(isPresented: $vm.isShowingSettings) {
 					SettingsView()
 				}
-		}
+		}.navigationViewStyle(.stack)
     }
 }
 

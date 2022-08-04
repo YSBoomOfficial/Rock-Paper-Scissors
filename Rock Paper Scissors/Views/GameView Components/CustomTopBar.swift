@@ -10,19 +10,19 @@ import SwiftUI
 struct CustomTopBarView: View {
 	@EnvironmentObject var vm: GameViewModel
 
-    var body: some View {
+	var body: some View {
 		HStack {
 			Button(action: vm.reset) {
 				Image(systemName: "arrow.counterclockwise")
 			}.buttonStyle(.lightBlue)
 
-			Spacer(minLength: 0)
+			Spacer()
 
 			Text("RPS")
 				.font(.largeTitle.bold())
 				.foregroundColor(.white)
 
-			Spacer(minLength: 0)
+			Spacer()
 
 			Button {
 				vm.isShowingSettings.toggle()
@@ -30,19 +30,21 @@ struct CustomTopBarView: View {
 				Image(systemName: "gearshape")
 			}.buttonStyle(.lightBlue)
 		}
-    }
+	}
 }
 
 struct CustomTopBar_Previews: PreviewProvider {
-    static var previews: some View {
-		ZStack {
-			BGView()
-			VStack {
-				CustomTopBarView()
-					.padding(.horizontal)
-					.environmentObject(GameViewModel())
-				Spacer()
+	static var previews: some View {
+		GeometryReader { proxy in
+			ZStack {
+				BGView(proxy: proxy)
+				VStack {
+					CustomTopBarView()
+						.padding(.horizontal)
+						.environmentObject(GameViewModel())
+					Spacer()
+				}
 			}
 		}.preferredColorScheme(.dark)
-    }
+	}
 }

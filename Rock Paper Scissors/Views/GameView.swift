@@ -12,52 +12,65 @@ struct GameView: View {
 	let model = GameModel()
 	
 	var body: some View {
-		ZStack {
-			// Background
-			BGView()
+		GeometryReader { proxy in
+			ZStack {
+				// Background
+				BGView(proxy: proxy)
 
-			// Foreground
-			VStack {
-				CustomTopBarView()
-					.padding(.horizontal)
-
-				Spacer(minLength: 0)
-
+				// Foreground
 				VStack {
-				// Ai
-					AICard(isShowing: $vm.isShowing,
-						   playerShouldWin: $vm.shouldWin,
-						   model: model,
-						   ai: vm.ai)
-					.padding(.top, 5)
-						// Win/Lose text
-					
-					WinTextView(isShowing: $vm.isShowing, shouldWin: $vm.shouldWin)
-				}
+					CustomTopBarView().padding(.horizontal)
 
-				Spacer(minLength: 0)
-				
-				// Player
-				HStack(spacing: ScreenSize.minLength/10) {
-					ForEach(0..<3) { index in
-						Button() {
-							vm.player = index
-							vm.check(player: vm.player)
-						} label: {
-							ButtonImage(index: index, model: model)
+					Spacer()
+
+					VStack {
+						// Ai
+						AICard(
+							proxy: proxy,
+							isShowing: $vm.isShowing,
+							playerShouldWin: $vm.shouldWin,
+							model: model,
+							ai: vm.ai
+						)
+						// Win/Lose text
+						WinTextView(
+							proxy: proxy,
+							isShowing: $vm.isShowing,
+							shouldWin: $vm.shouldWin
+						).padding(.top, 5)
+					}
+
+					// Player
+					HStack(spacing: 35) {
+						ForEach(0..<3) { index in
+							Button() {
+								vm.player = index
+								vm.check(player: vm.player)
+							} label: {
+								ButtonImage(
+									proxy: proxy,
+									index: index,
+									model: model
+								)
+							}
 						}
 					}
-				}.padding()
 
-				Spacer(minLength: 0)
+					Spacer()
 
-				// Score
-				ScoreView(playerScore: vm.playerScore, aiScore: vm.aiScore)
-					.padding()
+					// Score
+					ScoreView(
+						proxy: proxy,
+						playerScore: vm.playerScore,
+						aiScore: vm.aiScore
+					)
 
-				Spacer(minLength: 0)
+
+					Spacer()
+				}
 			}
-		}.allowsHitTesting(!vm.isShowing)
+			.allowsHitTesting(!vm.isShowing)
+		}
 	}
 }
 

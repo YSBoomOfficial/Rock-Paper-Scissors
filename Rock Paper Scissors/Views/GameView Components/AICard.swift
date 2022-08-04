@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AICard: View {
+	let proxy: GeometryProxy
 	@Binding var isShowing: Bool
 	@Binding var playerShouldWin: Bool
 	let model: GameModel
@@ -16,33 +17,36 @@ struct AICard: View {
 	var body: some View {
 		VStack {
 			Text(isShowing ? model.choices[ai].symbol : " ")
-				.font(.system(size: ScreenSize.minLength/2.5))
+				.font(.system(size: proxy.size.width/2.5))
 				.padding()
 				.background(
 					Circle()
 						.foregroundColor(!isShowing ? .yellow : playerShouldWin ? .red : .green)
 						.frame(
-							width: isShowing ? nil : ScreenSize.minLength/1.95,
-							height: isShowing ? nil : ScreenSize.minLength/1.95
+							width: isShowing ? nil : proxy.size.width/2,
+							height: isShowing ? nil : proxy.size.width/2
 						)
 				)
 
 			Text(isShowing ? model.choices[ai].word : "???")
-				.font(.system(size: ScreenSize.minLength/14).bold())
+				.font(.system(size: proxy.size.width/14).bold())
 				.foregroundColor(.white)
-		}
+
+		}.frame(width: proxy.size.width/2)
 	}
 }
 
 struct AICard_Previews: PreviewProvider {
     static var previews: some View {
-		ZStack {
-			BGView()
-			HStack {
-				AICard(isShowing: .constant(true),
-					   playerShouldWin: .constant(false),
-					   model: .init(),
-					   ai: 0)
+		GeometryReader { proxy in
+			ZStack {
+				BGView(proxy: proxy)
+				HStack {
+					AICard(proxy: proxy, isShowing: .constant(true),
+						   playerShouldWin: .constant(false),
+						   model: .init(),
+						   ai: 0)
+				}
 			}
 		}
     }
