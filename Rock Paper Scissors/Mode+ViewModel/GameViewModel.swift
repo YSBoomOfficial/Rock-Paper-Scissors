@@ -9,38 +9,39 @@ import SwiftUI
 
 class GameViewModel: ObservableObject {
 	// Ai
-	@Published var aiIndex = 0
-	@Published var aiScore = 0
+	@Published private(set) var aiIndex = 0
+	@Published private(set) var aiScore = 0
 
 	// Player
-	@Published var playerIndex = 0
-	@Published var playerScore = 0
+	@Published private(set) var playerIndex = 0
+	@Published private(set) var playerScore = 0
 
 	// should show ai response
-	@Published var isShowing = false
+	@Published private(set) var isShowing = false
 
 	// should player win
-	@Published var shouldWin = Bool.random()
+	@Published private(set) var shouldWin = Bool.random()
 
 	// Settings sheet
 	@Published var isShowingSettings = false
 
 	// Check Win / Los
-	func check(player: Int) {
+	func check(playerMove: Int) {
+		playerIndex = playerMove
 		shouldWin = Bool.random()
 
 		withAnimation { self.isShowing = true }
 
 		// swiftlint:disable switch_case_alignment
 		if shouldWin == true {
-			switch player {
+			switch playerMove {
 				case 0: aiIndex = 2
 				case 1: aiIndex = 0
 				default: aiIndex = 1
 			}
 			self.playerScore += 1
 		} else {
-			switch player {
+			switch playerMove {
 				case 0: aiIndex = 1
 				case 1: aiIndex = 2
 				default: aiIndex = 0

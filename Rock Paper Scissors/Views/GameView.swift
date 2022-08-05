@@ -43,17 +43,13 @@ struct GameView: View {
 
 					// Player
 					HStack(spacing: 35) {
-						ForEach(0..<3) { index in
+						ForEach(0..<GameModel.rpsChoices.count, id: \.self) { index in
 							OptionButton(
 								proxy: proxy,
 								symbol: GameModel.rpsChoices[index].symbol,
 								title: GameModel.rpsChoices[index].word,
 								onPressCondition: (vm.isShowing && index == vm.playerIndex)
-							)
-								.onTapGesture {
-								vm.playerIndex = index
-								vm.check(player: vm.playerIndex)
-							}
+							).onTapGesture { vm.check(playerMove: index) }
 						}
 					}
 

@@ -137,8 +137,8 @@
 		D3FE962628555F7400AC1738 /* Mode+ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				D374B92226FA819500F3DEF1 /* GameViewModel.swift */,
 				D3CE0D75285442FC00B0A0DE /* GameModel.swift */,
+				D374B92226FA819500F3DEF1 /* GameViewModel.swift */,
 			);
 			path = "Mode+ViewModel";
 			sourceTree = "<group>";
