@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct GameModel {
-	let choices: [(word: String, symbol: String)] = [
+enum GameModel {
+	static let rpsChoices: [(word: String, symbol: String)] = [
 		(word: "Rock", symbol: "👊"),
 		(word: "Paper", symbol: "🖐"),
 		(word: "Scissors", symbol: "✌️")

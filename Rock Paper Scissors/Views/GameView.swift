@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct GameView: View {
-	@EnvironmentObject var vm: GameViewModel
-	let model = GameModel()
+	@ObservedObject var vm: GameViewModel
 	
 	var body: some View {
 		GeometryReader { proxy in
@@ -19,7 +18,8 @@ struct GameView: View {
 
 				// Foreground
 				VStack {
-					CustomTopBarView().padding(.horizontal)
+					CustomTopBarView(vm: vm)
+						.padding(.horizontal)
 
 					Spacer()
 
@@ -27,31 +27,31 @@ struct GameView: View {
 						// Ai
 						AICard(
 							proxy: proxy,
-							isShowing: $vm.isShowing,
-							playerShouldWin: $vm.shouldWin,
-							model: model,
-							ai: vm.ai
+							symbol: GameModel.rpsChoices[vm.aiIndex].symbol,
+							title: GameModel.rpsChoices[vm.aiIndex].word,
+							onShowCondition: vm.isShowing,
+							shouldWinCondition: vm.shouldWin
 						)
 						// Win/Lose text
 						WinTextView(
 							proxy: proxy,
-							isShowing: $vm.isShowing,
-							shouldWin: $vm.shouldWin
+							isShowing: vm.isShowing,
+							shouldWin: vm.shouldWin
 						).padding(.top, 5)
 					}
 
 					// Player
 					HStack(spacing: 35) {
 						ForEach(0..<3) { index in
-							Button() {
-								vm.player = index
-								vm.check(player: vm.player)
-							} label: {
-								ButtonImage(
-									proxy: proxy,
-									index: index,
-									model: model
-								)
+							OptionButton(
+								proxy: proxy,
+								symbol: GameModel.rpsChoices[index].symbol,
+								title: GameModel.rpsChoices[index].word,
+								onPressCondition: (vm.isShowing && index == vm.playerIndex)
+							)
+								.onTapGesture {
+								vm.playerIndex = index
+								vm.check(player: vm.playerIndex)
 							}
 						}
 					}
@@ -60,11 +60,9 @@ struct GameView: View {
 
 					// Score
 					ScoreView(
-						proxy: proxy,
 						playerScore: vm.playerScore,
 						aiScore: vm.aiScore
 					)
-
 
 					Spacer()
 				}
@@ -77,8 +75,6 @@ struct GameView: View {
 
 struct RPSView_Previews: PreviewProvider {
 	static var previews: some View {
-		GameView()
-			.environmentObject(GameViewModel())
-			.preferredColorScheme(.dark)
+		GameView(vm: .init())
 	}
 }

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct WinTextView: View {
 	let proxy: GeometryProxy
-	@Binding var isShowing: Bool
-	@Binding var shouldWin: Bool
+	let isShowing: Bool
+	let shouldWin: Bool
 	
     var body: some View {
 		Text(!isShowing ? "." : shouldWin ? "You won" : "You Lost")
@@ -25,7 +25,7 @@ struct WinTextView_Previews: PreviewProvider {
 		GeometryReader { proxy in
 			ZStack {
 				BGView(proxy: proxy)
-				WinTextView(proxy: proxy, isShowing: .constant(true), shouldWin: .constant(true))
+				WinTextView(proxy: proxy, isShowing: true, shouldWin: true)
 			}
 		}
     }

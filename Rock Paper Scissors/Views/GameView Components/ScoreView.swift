@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ScoreView: View {
-	let proxy: GeometryProxy
 	let playerScore: Int
 	let aiScore: Int
 	
@@ -27,9 +26,8 @@ struct ScoreView_Previews: PreviewProvider {
 		GeometryReader { proxy in
 			ZStack {
 				BGView(proxy: proxy)
-				ScoreView(proxy: proxy, playerScore: 0, aiScore: 0)
+				ScoreView(playerScore: 0, aiScore: 0)
 			}
-
 		}
     }
 }

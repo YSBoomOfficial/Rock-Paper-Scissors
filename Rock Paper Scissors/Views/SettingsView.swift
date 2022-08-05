@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+	@ObservedObject var vm: GameViewModel
 	private let linksUrl = URL(string: "https://linktr.ee/YSBoomOfficial")!
 	private let repoURL = URL(string: "https://github.com/YSBoomOfficial/Rock-Paper-Scissors")!
 
@@ -40,7 +41,7 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
 	static var previews: some View {
-		SettingsView()
+		SettingsView(vm: .init())
 			.preferredColorScheme(.dark)
 	}
 }

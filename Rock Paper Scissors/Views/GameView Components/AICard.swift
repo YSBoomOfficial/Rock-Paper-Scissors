@@ -9,26 +9,26 @@ import SwiftUI
 
 struct AICard: View {
 	let proxy: GeometryProxy
-	@Binding var isShowing: Bool
-	@Binding var playerShouldWin: Bool
-	let model: GameModel
-	let ai: Int
+	let symbol: String
+	let title: String
+	let onShowCondition: Bool
+	let shouldWinCondition: Bool
 	
 	var body: some View {
 		VStack {
-			Text(isShowing ? model.choices[ai].symbol : " ")
+			Text(onShowCondition ? symbol : " ")
 				.font(.system(size: proxy.size.width/2.5))
 				.padding()
 				.background(
 					Circle()
-						.foregroundColor(!isShowing ? .yellow : playerShouldWin ? .red : .green)
+						.foregroundColor(!onShowCondition ? .yellow : shouldWinCondition ? .red : .green)
 						.frame(
-							width: isShowing ? nil : proxy.size.width/2,
-							height: isShowing ? nil : proxy.size.width/2
+							width: onShowCondition ? nil : proxy.size.width/2,
+							height: onShowCondition ? nil : proxy.size.width/2
 						)
 				)
 
-			Text(isShowing ? model.choices[ai].word : "???")
+			Text(onShowCondition ? title : "???")
 				.font(.system(size: proxy.size.width/14).bold())
 				.foregroundColor(.white)
 
@@ -42,10 +42,13 @@ struct AICard_Previews: PreviewProvider {
 			ZStack {
 				BGView(proxy: proxy)
 				HStack {
-					AICard(proxy: proxy, isShowing: .constant(true),
-						   playerShouldWin: .constant(false),
-						   model: .init(),
-						   ai: 0)
+					AICard(
+						proxy: proxy,
+						symbol: GameModel.rpsChoices[1].symbol,
+						title: GameModel.rpsChoices[1].word,
+						onShowCondition: true,
+						shouldWinCondition: true
+					)
 				}
 			}
 		}

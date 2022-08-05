@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-	@EnvironmentObject var vm: GameViewModel
+	@StateObject var vm = GameViewModel()
 
     var body: some View {
 		NavigationView {
-			GameView()
+			GameView(vm: vm)
 				.navigationBarHidden(true)
 				.sheet(isPresented: $vm.isShowingSettings) {
-					SettingsView()
+					SettingsView(vm: vm)
 				}
 		}.navigationViewStyle(.stack)
     }
@@ -24,7 +24,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
 		ContentView()
-			.environmentObject(GameViewModel())
-			.preferredColorScheme(.dark)
     }
 }

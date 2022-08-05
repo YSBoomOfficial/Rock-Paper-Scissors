@@ -9,12 +9,9 @@ import SwiftUI
 
 @main
 struct RPSApp: App {
-	@StateObject var vm = GameViewModel()
-	
     var body: some Scene {
         WindowGroup {
 			ContentView()
-				.environmentObject(vm)
 				.onAppear {
 					// MARK: Uncomment before prod
 					// AppReviewRequest.requestReviewIfNeeded()

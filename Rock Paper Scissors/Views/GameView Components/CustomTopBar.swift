@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomTopBarView: View {
-	@EnvironmentObject var vm: GameViewModel
+	@ObservedObject var vm: GameViewModel
 
 	var body: some View {
 		HStack {
@@ -39,12 +39,12 @@ struct CustomTopBar_Previews: PreviewProvider {
 			ZStack {
 				BGView(proxy: proxy)
 				VStack {
-					CustomTopBarView()
+					CustomTopBarView(vm: .init())
 						.padding(.horizontal)
-						.environmentObject(GameViewModel())
 					Spacer()
 				}
 			}
-		}.preferredColorScheme(.dark)
+		}
+		.environmentObject(GameViewModel())
 	}
 }

@@ -9,11 +9,11 @@ import SwiftUI
 
 class GameViewModel: ObservableObject {
 	// Ai
-	@Published var ai = 0
+	@Published var aiIndex = 0
 	@Published var aiScore = 0
 
 	// Player
-	@Published var player = 0
+	@Published var playerIndex = 0
 	@Published var playerScore = 0
 	
 	// should show ai response
@@ -32,17 +32,17 @@ class GameViewModel: ObservableObject {
 		
 		if shouldWin == true {
 			switch player {
-				case 0: ai = 2
-				case 1: ai = 0
-				default: ai = 1
+				case 0: aiIndex = 2
+				case 1: aiIndex = 0
+				default: aiIndex = 1
 			}
 			self.playerScore += 1
 			
 		} else {
 			switch player {
-				case 0: ai = 1
-				case 1: ai = 2
-				default: ai = 0
+				case 0: aiIndex = 1
+				case 1: aiIndex = 2
+				default: aiIndex = 0
 			}
 			self.aiScore += 1
 		}
@@ -54,10 +54,10 @@ class GameViewModel: ObservableObject {
 	}
 
 	func reset() {
-		ai = 0
+		aiIndex = 0
 		aiScore = 0
 
-		player = 0
+		playerIndex = 0
 		playerScore = 0
 
 		isShowing = false
