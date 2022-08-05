@@ -11,19 +11,17 @@ struct ContentView: View {
 	// swiftlint:disable:next identifier_name
 	@StateObject var vm = GameViewModel()
 
-    var body: some View {
-		NavigationView {
-			GameView(vm: vm)
-				.navigationBarHidden(true)
-				.sheet(isPresented: $vm.isShowingSettings) {
-					SettingsView(vm: vm)
-				}
-		}.navigationViewStyle(.stack)
-    }
+	var body: some View {
+		GameView(vm: vm)
+			.navigationBarHidden(true)
+			.sheet(isPresented: $vm.isShowingSettings) {
+				SettingsView(vm: vm)
+			}
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		ContentView()
-    }
+	}
 }
