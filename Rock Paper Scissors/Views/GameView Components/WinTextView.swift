@@ -11,7 +11,7 @@ struct WinTextView: View {
 	let proxy: GeometryProxy
 	let isShowing: Bool
 	let shouldWin: Bool
-	
+
     var body: some View {
 		Text(!isShowing ? "." : shouldWin ? "You won" : "You Lost")
 			.font(.largeTitle.bold())

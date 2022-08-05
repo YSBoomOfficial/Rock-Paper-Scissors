@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+	// swiftlint:disable:next identifier_name
 	@StateObject var vm = GameViewModel()
 
     var body: some View {

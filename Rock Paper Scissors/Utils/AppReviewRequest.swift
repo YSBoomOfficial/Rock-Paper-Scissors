@@ -28,6 +28,7 @@ enum AppReviewRequest {
 		// Only present review if threshold has been met
 		guard runsSinceLastRequest >= threshold else { return }
 
+		// swiftlint:disable:next line_length
 		if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
 			SKStoreReviewController.requestReview(in: scene)
 			version = currentVersion

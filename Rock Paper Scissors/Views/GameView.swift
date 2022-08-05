@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct GameView: View {
+	// swiftlint:disable:next identifier_name
 	@ObservedObject var vm: GameViewModel
-	
+
 	var body: some View {
 		GeometryReader { proxy in
 			ZStack {
@@ -71,7 +72,6 @@ struct GameView: View {
 		}
 	}
 }
-
 
 struct RPSView_Previews: PreviewProvider {
 	static var previews: some View {

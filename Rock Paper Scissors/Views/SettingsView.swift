@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+	// swiftlint:disable:next identifier_name
 	@ObservedObject var vm: GameViewModel
 	private let linksUrl = URL(string: "https://linktr.ee/YSBoomOfficial")!
 	private let repoURL = URL(string: "https://github.com/YSBoomOfficial/Rock-Paper-Scissors")!

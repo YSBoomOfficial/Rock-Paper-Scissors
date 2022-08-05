@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CustomTopBarView: View {
+	// swiftlint:disable:next identifier_name
 	@ObservedObject var vm: GameViewModel
 
 	var body: some View {

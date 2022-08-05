@@ -10,7 +10,7 @@ import SwiftUI
 struct ScoreView: View {
 	let playerScore: Int
 	let aiScore: Int
-	
+
 	var body: some View {
 		VStack {
 			Text("Player - The Ai")

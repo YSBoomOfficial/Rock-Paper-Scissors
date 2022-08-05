@@ -13,7 +13,7 @@ struct AICard: View {
 	let title: String
 	let onShowCondition: Bool
 	let shouldWinCondition: Bool
-	
+
 	var body: some View {
 		VStack {
 			Text(onShowCondition ? symbol : " ")

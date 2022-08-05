@@ -15,21 +15,23 @@ class GameViewModel: ObservableObject {
 	// Player
 	@Published var playerIndex = 0
 	@Published var playerScore = 0
-	
+
 	// should show ai response
 	@Published var isShowing = false
+
 	// should player win
 	@Published var shouldWin = Bool.random()
 
 	// Settings sheet
 	@Published var isShowingSettings = false
-	
+
 	// Check Win / Los
 	func check(player: Int) {
 		shouldWin = Bool.random()
 
 		withAnimation { self.isShowing = true }
-		
+
+		// swiftlint:disable switch_case_alignment
 		if shouldWin == true {
 			switch player {
 				case 0: aiIndex = 2
@@ -37,7 +39,6 @@ class GameViewModel: ObservableObject {
 				default: aiIndex = 1
 			}
 			self.playerScore += 1
-			
 		} else {
 			switch player {
 				case 0: aiIndex = 1
@@ -46,7 +47,7 @@ class GameViewModel: ObservableObject {
 			}
 			self.aiScore += 1
 		}
-			
+
 		// reset display after delay
 		DispatchQueue.main.asyncAfter(deadline: .now()+1.25) {
 			withAnimation { self.isShowing = false }
