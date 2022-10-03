@@ -17,9 +17,23 @@ struct SettingsView: View {
 		NavigationView {
 			List {
 				Section {
-					Label("Version \(Constants.appVersion)", systemImage: "app.badge")
+
+					Label(
+						"Version \(Bundle.main.releaseVersionNumber!)",
+						systemImage: "app.badge"
+					)
+
+					Label(
+						"Build \(Bundle.main.buildVersionNumber!)",
+						systemImage: "hammer.circle"
+					)
+
 					Link(destination: repoURL) {
-						Text("Wanna see how I made this app? ").foregroundColor(.primary) + Text("Here's the code")
+						VStack(alignment: .leading) {
+							Text("Wanna take a peak at the code? ")
+								.foregroundColor(.primary)
+							Text("Here's the GitHub repo")
+						}
 					}
 				} header: {
 					Text("About The App")
