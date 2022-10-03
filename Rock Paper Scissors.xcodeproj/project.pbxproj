@@ -15,7 +15,7 @@
 		D374B91D26FA809300F3DEF1 /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B91C26FA809300F3DEF1 /* OptionButton.swift */; };
 		D374B92026FA80C300F3DEF1 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B91F26FA80C300F3DEF1 /* ScoreView.swift */; };
 		D374B92326FA819500F3DEF1 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374B92226FA819500F3DEF1 /* GameViewModel.swift */; };
-		D3CE0D76285442FC00B0A0DE /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CE0D75285442FC00B0A0DE /* GameModel.swift */; };
+		D3CE0D76285442FC00B0A0DE /* RPSChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CE0D75285442FC00B0A0DE /* RPSChoice.swift */; };
 		D3D9C6922658A36300D268D1 /* RPSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D9C6912658A36300D268D1 /* RPSApp.swift */; };
 		D3D9C6962658A36300D268D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D9C6952658A36300D268D1 /* Assets.xcassets */; };
 		D3D9C6992658A36300D268D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D9C6982658A36300D268D1 /* Preview Assets.xcassets */; };
@@ -36,7 +36,7 @@
 		D374B91C26FA809300F3DEF1 /* OptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
 		D374B91F26FA80C300F3DEF1 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		D374B92226FA819500F3DEF1 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
-		D3CE0D75285442FC00B0A0DE /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		D3CE0D75285442FC00B0A0DE /* RPSChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSChoice.swift; sourceTree = "<group>"; };
 		D3D9C68E2658A36300D268D1 /* Rock Paper Scissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rock Paper Scissors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D9C6912658A36300D268D1 /* RPSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSApp.swift; sourceTree = "<group>"; };
 		D3D9C6952658A36300D268D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D33E9D4B28EA7F2600E71A34 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D374B92226FA819500F3DEF1 /* GameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		D374B91526FA802600F3DEF1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +124,8 @@
 			children = (
 				D3D9C6912658A36300D268D1 /* RPSApp.swift */,
 				D3CE0D722854420D00B0A0DE /* Utils */,
-				D3FE962628555F7400AC1738 /* Mode+ViewModel */,
+				D3FE962628555F7400AC1738 /* Models */,
+				D33E9D4B28EA7F2600E71A34 /* ViewModels */,
 				D374B91526FA802600F3DEF1 /* Views */,
 				D3D9C6952658A36300D268D1 /* Assets.xcassets */,
 				D3D9C69A2658A36300D268D1 /* Info.plist */,
@@ -134,13 +143,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D3FE962628555F7400AC1738 /* Mode+ViewModel */ = {
+		D3FE962628555F7400AC1738 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D3CE0D75285442FC00B0A0DE /* GameModel.swift */,
-				D374B92226FA819500F3DEF1 /* GameViewModel.swift */,
+				D3CE0D75285442FC00B0A0DE /* RPSChoice.swift */,
 			);
-			path = "Mode+ViewModel";
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +246,7 @@
 				D3465D3126FA86A100BDC29B /* GameView.swift in Sources */,
 				D3FE962C285568BD00AC1738 /* LightBlueButton+ButtonStyle.swift in Sources */,
 				D3FE962A285564C600AC1738 /* CustomTopBar.swift in Sources */,
-				D3CE0D76285442FC00B0A0DE /* GameModel.swift in Sources */,
+				D3CE0D76285442FC00B0A0DE /* RPSChoice.swift in Sources */,
 				D3FE96282855612D00AC1738 /* ContentView.swift in Sources */,
 				D374B91D26FA809300F3DEF1 /* OptionButton.swift in Sources */,
 				D3FE962E285575AB00AC1738 /* AppReviewRequest.swift in Sources */,
@@ -381,6 +389,7 @@
 				DEVELOPMENT_TEAM = HB73YMFXYF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Rock Paper Scissors/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -388,9 +397,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Yash.Rock-Paper-Scissors";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -405,6 +416,7 @@
 				DEVELOPMENT_TEAM = HB73YMFXYF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Rock Paper Scissors/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,9 +424,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Yash.Rock-Paper-Scissors";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

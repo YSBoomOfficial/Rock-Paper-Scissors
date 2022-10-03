@@ -28,11 +28,11 @@ struct GameView: View {
 						// Ai
 						AICard(
 							proxy: proxy,
-							symbol: GameModel.rpsChoices[vm.aiIndex].symbol,
-							title: GameModel.rpsChoices[vm.aiIndex].word,
+							model: RPSChoice.examples[vm.aiIndex],
 							onShowCondition: vm.isShowing,
 							shouldWinCondition: vm.shouldWin
 						)
+
 						// Win/Lose text
 						WinTextView(
 							proxy: proxy,
@@ -43,11 +43,10 @@ struct GameView: View {
 
 					// Player
 					HStack(spacing: 35) {
-						ForEach(0..<GameModel.rpsChoices.count, id: \.self) { index in
+						ForEach(0..<RPSChoice.examples.count, id: \.self) { index in
 							OptionButton(
 								proxy: proxy,
-								symbol: GameModel.rpsChoices[index].symbol,
-								title: GameModel.rpsChoices[index].word,
+								model: RPSChoice.examples[index],
 								onPressCondition: (vm.isShowing && index == vm.playerIndex)
 							).onTapGesture { vm.check(playerMove: index) }
 						}

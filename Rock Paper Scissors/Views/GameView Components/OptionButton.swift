@@ -9,13 +9,12 @@ import SwiftUI
 
 struct OptionButton: View {
 	let proxy: GeometryProxy
-	let symbol: String
-	let title: String
+	let model: RPSChoice
 	let onPressCondition: Bool
 
 	var body: some View {
 		VStack {
-			Text(symbol)
+			Text(model.symbol)
 				.font(.system(size: proxy.size.width/7.5))
 				.padding()
 				.background(
@@ -23,7 +22,7 @@ struct OptionButton: View {
 						.foregroundColor(onPressCondition ? .blue.opacity(0.5) : .blue)
 				)
 
-			Text(title)
+			Text(model.title)
 				.font(.system(.title))
 				.font(.callout)
 				.fontWeight(.semibold)
@@ -40,14 +39,12 @@ struct ButtonImage_Previews: PreviewProvider {
 				HStack {
 					OptionButton(
 						proxy: proxy,
-						symbol: GameModel.rpsChoices[1].symbol,
-						title: GameModel.rpsChoices[1].word,
+						model: .examples.first!,
 						onPressCondition: true
 					)
 					OptionButton(
 						proxy: proxy,
-						symbol: GameModel.rpsChoices[1].symbol,
-						title: GameModel.rpsChoices[1].word,
+						model: .examples.first!,
 						onPressCondition: false
 					)
 				}

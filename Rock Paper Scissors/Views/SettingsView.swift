@@ -23,11 +23,6 @@ struct SettingsView: View {
 						systemImage: "app.badge"
 					)
 
-					Label(
-						"Build \(Bundle.main.buildVersionNumber!)",
-						systemImage: "hammer.circle"
-					)
-
 					Link(destination: repoURL) {
 						VStack(alignment: .leading) {
 							Text("Wanna take a peak at the code? ")

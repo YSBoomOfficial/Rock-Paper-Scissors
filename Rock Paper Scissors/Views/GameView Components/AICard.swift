@@ -9,14 +9,13 @@ import SwiftUI
 
 struct AICard: View {
 	let proxy: GeometryProxy
-	let symbol: String
-	let title: String
+	let model: RPSChoice
 	let onShowCondition: Bool
 	let shouldWinCondition: Bool
 
 	var body: some View {
 		VStack {
-			Text(onShowCondition ? symbol : " ")
+			Text(onShowCondition ? model.symbol : " ")
 				.font(.system(size: proxy.size.width/2.5))
 				.padding()
 				.background(
@@ -28,7 +27,7 @@ struct AICard: View {
 						)
 				)
 
-			Text(onShowCondition ? title : "???")
+			Text(onShowCondition ? model.title : "???")
 				.font(.system(size: proxy.size.width/14).bold())
 				.foregroundColor(.white)
 
@@ -43,9 +42,7 @@ struct AICard_Previews: PreviewProvider {
 				BGView(proxy: proxy)
 				HStack {
 					AICard(
-						proxy: proxy,
-						symbol: GameModel.rpsChoices[1].symbol,
-						title: GameModel.rpsChoices[1].word,
+						proxy: proxy, model: .examples.first!,
 						onShowCondition: true,
 						shouldWinCondition: true
 					)
