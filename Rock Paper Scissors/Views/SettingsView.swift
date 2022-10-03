@@ -19,7 +19,7 @@ struct SettingsView: View {
 				Section {
 
 					Label(
-						"Version \(Bundle.main.releaseVersionNumber!)",
+						"Version \(Bundle.main.releaseVersionNumber!).\(Bundle.main.buildVersionNumber!)",
 						systemImage: "app.badge"
 					)
 
